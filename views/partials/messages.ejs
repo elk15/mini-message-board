@@ -1,7 +1,8 @@
 <ul>
     <% messages.forEach((msg) => {  %>
-      <li>
-         <%= msg.user %> <%= msg.text %> <%= msg.added %>
+      <li class="message">
+        <div><span><%= msg.user %></span> <span><%= msg.added %></span></div>
+          <%= msg.text %> 
         </li>
     <% }); %>
 </ul>
