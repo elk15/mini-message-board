@@ -1,16 +1,17 @@
 const express = require('express');
 const router = express.Router();
+const formatDate = require('../public/javascripts/formatDate.js');
 
 const messages = [
   {
     text: "Hi there!",
     user: "Amanda",
-    added: new Date()
+    added: formatDate(new Date())
   },
   {
     text: "Hello World!",
     user: "Charles",
-    added: new Date()
+    added: formatDate(new Date())
   }
 ];
 
