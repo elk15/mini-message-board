@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+    <main>
+      <ul>
+        <% messages.forEach((msg) => {  %>
+          <li> <%= msg.user %> <%= msg.text %> <%= msg.added %></li>
+        <% }); %>
+      </ul>
+      <form method="POST" action="/new" >
+        <input type="text" name="user" placeholder="Enter your username" autofocus>
+        <textarea name="message" id="message" cols="30" rows="10" placeholder="Enter your message">
+        </textarea>
+        <button type="submit">Send</button>
+      </form>
+    </main>
+  </body>
+</html>
