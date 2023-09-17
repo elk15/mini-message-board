@@ -1,18 +1,12 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
+  <%- include('partials/head', {title: title}); %>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
     <main>
-      <ul>
-        <% messages.forEach((msg) => {  %>
-          <li> <%= msg.user %> <%= msg.text %> <%= msg.added %></li>
-        <% }); %>
-      </ul>
+      <%- include('partials/messages', {messages: messages}); %>
+      <a href="/new" autofocus>
+        Add new message
+      </a>
     </main>
   </body>
 </html>
