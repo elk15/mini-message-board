@@ -5,10 +5,12 @@
     <main>
       <%- include('partials/messages', {messages: messages}); %>
       <form method="POST" action="/new" >
-        <input type="text" name="user" placeholder="Enter your username" autofocus>
-        <textarea name="message" id="message" cols="30" rows="10" placeholder="Enter your message">
-        </textarea>
-        <button type="submit">Send</button>
+        <input type="text" name="user" placeholder="Enter your username" required maxlength="20" autofocus autocomplete="off">
+        <textarea name="message" required placeholder="Enter your message"></textarea>
+        <button type="submit">
+          Send
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>send</title><path d="M2,21L23,12L2,3V10L17,12L2,14V21Z" /></svg>
+        </button>
       </form>
     </main>
   </body>
