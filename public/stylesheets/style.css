@@ -33,12 +33,16 @@ main ul{
   font-size: 1.2rem;
 }
 
-.message div {
+.message h2 {
   display: flex;
   justify-content: space-between;
   font-weight: bold;
   margin-bottom: 10px;
+  font-size: 1.2rem;
+}
 
+.message p {
+  overflow-wrap: break-word;
 }
 
 .message:after {
