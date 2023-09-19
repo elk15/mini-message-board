@@ -14,7 +14,6 @@ main {
   flex-direction: column;
   align-items: center;
   max-width: 500px;
-  flex: 1;
   padding: 10px;
 }
 
@@ -106,4 +105,10 @@ button {
 svg {
   fill: #fff;
   width: 20px;
+}
+
+@media only screen and (max-width: 1000px) {
+  main {
+    margin-top: 10px;
+  }
 }
