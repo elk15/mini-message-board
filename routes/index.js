@@ -1,33 +1,13 @@
 const express = require('express');
 const router = express.Router();
-const formatDate = require('../public/javascripts/formatDate.js');
-
-const messages = [
-  {
-    text: "Hi there!",
-    user: "Amanda",
-    added: formatDate(new Date())
-  },
-  {
-    text: "Hello World!",
-    user: "Charles",
-    added: formatDate(new Date())
-  }
-];
+const message_controller = require("../controllers/messageController");
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Message Board', messages: messages });
-});
+router.get('/', message_controller.get_index);
 
 // Get new message form
-router.get('/new', function(req, res, next) {
-  res.render('new', { title: 'Message Board', messages: messages });
-});
+router.get('/new', message_controller.get_new);
 
-router.post('/new', function(req, res) {
-  messages.push({text: req.body.message, user: req.body.user, added: formatDate(new Date())});
-  res.redirect('/');
-});
+router.post('/new', message_controller.post_new);
 
 module.exports = router;
